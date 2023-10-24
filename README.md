@@ -35,6 +35,15 @@ when the `"internal"` feature for the library is enabled. It also adds a
 doc comment warning to the top of all internal fields to make it clear 
 when something is internal.
 
+## Installation
+
+`internal` must be installed from GitHub. Please refer to [crates.io's 
+policies](https://crates.io/policies#squatting) and [crates.io/crates/internal](https://crates.io/crates/internal).
+
+```bash
+cargo add --git https://github.com/Kyza/internal.git
+```
+
 ## Usage
 
 To mark something as internal, use the `internal` proc macro. It 
@@ -50,23 +59,23 @@ apply internal recursively.
 ### `your_lib`
 
 ```rs
-use internal::internal as int;
+use internal::internal;
 
-#[int]
+#[internal]
 fn internal_fn(arg: InternalStruct) {
 	// ...
 }
 
-#[int]
+#[internal]
 #[derive(Clone)]
 struct InternalStruct {
 	field: PrivateThing
 }
 
-#[int]
-mod private_mod {
+#[internal]
+mod internal_mod {
    pub struct PublicStruct {
-      private_field: PublicThing
+      internal_field: PublicThing
    }
 }
 ```
@@ -83,7 +92,7 @@ your_lib = { features = ["internal"] }
 
 // If the `internal` feature is explicitly enabled,
 // anything marked as internal will become public.
-use your_lib::{internal, InternalStruct, PublicStruct};
+use your_lib::{internal_fn, InternalStruct, internal_mod};
 
 internal_fn(InternalStruct {
 	field: ...
@@ -91,6 +100,6 @@ internal_fn(InternalStruct {
 
 // Everything gets publicized recursively.
 private_mod::PublicStruct {
-	private_field: ...
+	internal_field: ...
 }
 ```
