@@ -6,11 +6,12 @@ Private fields were a mistake.
 
 Ok, maybe that's a bit of an exaggeration.
 
-Private fields exist for two reasons:
+Private fields aren't bad; they have a purpose:
 
 1. To allow library developers to make breaking changes to things without 
    making major [semver](https://semver.org/) jumps.
-2. To enable compiler optimizations.
+2. To prevent consumers from accidentally causing UB.
+3. To enable compiler optimizations.
 
 But there's a better way.
 
