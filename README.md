@@ -36,15 +36,6 @@ when the `"internal"` feature for the library is enabled. It also adds a
 doc comment warning to the top of all internal fields to make it clear 
 when something is internal.
 
-## Installation
-
-`internal` must be installed from GitHub. Please refer to [crates.io's 
-policies](https://crates.io/policies#squatting) and [crates.io/crates/internal](https://crates.io/crates/internal).
-
-```bash
-cargo add --git https://github.com/Kyza/internal.git
-```
-
 ## Usage
 
 To mark something as internal, use the `internal` proc macro. It 
