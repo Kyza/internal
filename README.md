@@ -38,6 +38,10 @@ when something is internal.
 
 ## Usage
 
+```bash
+cargo install internal
+```
+
 To mark something as internal, use the `internal` proc macro. It 
 effectively replaces private fields because those are useless when 
 internal fields exist.
