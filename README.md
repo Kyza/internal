@@ -39,7 +39,7 @@ when something is internal.
 ## Usage
 
 ```bash
-cargo install internal
+cargo add internal
 ```
 
 To mark something as internal, use the `internal` proc macro. It 
