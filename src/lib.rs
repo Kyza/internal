@@ -1,3 +1,6 @@
+#![doc = include_str!("../README.md")]
+#![allow(clippy::tabs_in_doc_comments)]
+
 extern crate proc_macro;
 use proc_macro::TokenStream;
 use proc_macro2::{Span, TokenStream as TokenStream2};

@@ -1,6 +1,6 @@
 [package]
 name = "internal"
-version = "0.1.3"
+version = "0.1.4"
 authors = ["Kyza"]
 edition = "2021"
 description = "Internal fields in Rust."
